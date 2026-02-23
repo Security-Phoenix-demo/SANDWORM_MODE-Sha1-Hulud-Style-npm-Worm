@@ -1,0 +1,163 @@
+================================================================================
+ENHANCED NPM PACKAGE COMPROMISE DETECTION REPORT WITH PHOENIX INTEGRATION
+================================================================================
+Scan completed: 2026-02-23 06:03:59
+
+SCAN STATISTICS:
+--------------------
+Files scanned: 2
+Total packages scanned: 0
+Clean packages found: 0
+Total findings: 12
+Scan mode: Full repository scan
+Repository storage: github-pull/20260223
+Results directory: result/20260223
+Phoenix assets created: 2
+
+FILES SCANNED:
+--------------------
+ 1. sample_repo_compromised/package.json
+ 2. sample_repo_compromised/package-lock.json
+
+REPOSITORY PROCESSING DETAILS:
+------------------------------
+
+LIBRARY ANALYSIS SUMMARY:
+-------------------------
+Total libraries scanned: 4
+Clean libraries: 0
+Compromised libraries: 4
+
+COMPROMISED LIBRARIES FOUND:
+-------------------------
+ 1. claud-code@0.2.1 (dependencies) - CRITICAL
+    📁 Build file: sample_repo_compromised/package.json
+    🔗 Repository: https://github.com/Security-Phoenix-demo/SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm.git
+    📍 Local path: sample_repo_compromised/package.json
+    ⚠️  Compromised versions: 0.2.1
+
+ 2. cloude@0.3.0 (dependencies) - CRITICAL
+    📁 Build file: sample_repo_compromised/package.json
+    🔗 Repository: https://github.com/Security-Phoenix-demo/SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm.git
+    📍 Local path: sample_repo_compromised/package.json
+    ⚠️  Compromised versions: 0.3.0
+
+ 3. detect-cache@1.0.0 (dependencies) - CRITICAL
+    📁 Build file: sample_repo_compromised/package.json
+    🔗 Repository: https://github.com/Security-Phoenix-demo/SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm.git
+    📍 Local path: sample_repo_compromised/package.json
+    ⚠️  Compromised versions: 1.0.0
+
+ 4. opencraw@2026.2.17 (dependencies) - CRITICAL
+    📁 Build file: sample_repo_compromised/package.json
+    🔗 Repository: https://github.com/Security-Phoenix-demo/SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm.git
+    📍 Local path: sample_repo_compromised/package.json
+    ⚠️  Compromised versions: 2026.2.17
+
+
+SEVERITY SUMMARY:
+--------------------
+CRITICAL: 12
+
+DETAILED FINDINGS:
+--------------------
+Repository: unknown
+File: sample_repo_compromised/package.json
+
+1. [CRITICAL] Compromised package detected: claud-code@0.2.1
+   📁 Location: sample_repo_compromised/package.json
+   package: claud-code
+   version: 0.2.1
+   📦 Type: dependencies
+   ⚠️  Compromised versions: 0.2.1
+
+2. [CRITICAL] Compromised package detected: cloude@0.3.0
+   📁 Location: sample_repo_compromised/package.json
+   package: cloude
+   version: 0.3.0
+   📦 Type: dependencies
+   ⚠️  Compromised versions: 0.3.0
+
+3. [CRITICAL] Compromised package detected: detect-cache@1.0.0
+   📁 Location: sample_repo_compromised/package.json
+   package: detect-cache
+   version: 1.0.0
+   📦 Type: dependencies
+   ⚠️  Compromised versions: 1.0.0
+
+4. [CRITICAL] Compromised package detected: opencraw@2026.2.17
+   📁 Location: sample_repo_compromised/package.json
+   package: opencraw
+   version: 2026.2.17
+   📦 Type: dependencies
+   ⚠️  Compromised versions: 2026.2.17
+
+----------------------------------------
+
+Repository: unknown
+File: sample_repo_compromised/package-lock.json
+
+5. [CRITICAL] Compromised package in lock file: claud-code@0.2.1
+   📁 Location: sample_repo_compromised/package-lock.json
+   package: claud-code
+   version: 0.2.1
+   ⚠️  Compromised versions: 0.2.1
+
+6. [CRITICAL] Compromised package in lock file: cloude@0.3.0
+   📁 Location: sample_repo_compromised/package-lock.json
+   package: cloude
+   version: 0.3.0
+   ⚠️  Compromised versions: 0.3.0
+
+7. [CRITICAL] Compromised package in lock file: detect-cache@1.0.0
+   📁 Location: sample_repo_compromised/package-lock.json
+   package: detect-cache
+   version: 1.0.0
+   ⚠️  Compromised versions: 1.0.0
+
+8. [CRITICAL] Compromised package in lock file: opencraw@2026.2.17
+   📁 Location: sample_repo_compromised/package-lock.json
+   package: opencraw
+   version: 2026.2.17
+   ⚠️  Compromised versions: 2026.2.17
+
+----------------------------------------
+
+Repository: https://github.com/Security-Phoenix-demo/SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm/tree/main/sample_repo_compromised/
+File: https://github.com/Security-Phoenix-demo/SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm/tree/main/sample_repo_compromised/package-lock.json
+
+9. [CRITICAL] Compromised package detected: claud-code@0.2.1
+   📁 Location: sample_repo_compromised/package-lock.json
+   package: claud-code
+   version: 0.2.1
+   📦 Type: dependencies
+   ⚠️  Compromised versions: 0.2.1
+
+10. [CRITICAL] Compromised package detected: cloude@0.3.0
+   📁 Location: sample_repo_compromised/package-lock.json
+   package: cloude
+   version: 0.3.0
+   📦 Type: dependencies
+   ⚠️  Compromised versions: 0.3.0
+
+11. [CRITICAL] Compromised package detected: detect-cache@1.0.0
+   📁 Location: sample_repo_compromised/package-lock.json
+   package: detect-cache
+   version: 1.0.0
+   📦 Type: dependencies
+   ⚠️  Compromised versions: 1.0.0
+
+12. [CRITICAL] Compromised package detected: opencraw@2026.2.17
+   📁 Location: sample_repo_compromised/package-lock.json
+   package: opencraw
+   version: 2026.2.17
+   📦 Type: dependencies
+   ⚠️  Compromised versions: 2026.2.17
+
+----------------------------------------
+
+PHOENIX SECURITY INTEGRATION:
+------------------------------
+Assets created: 2
+Findings created: 8
+Import status: Enabled
