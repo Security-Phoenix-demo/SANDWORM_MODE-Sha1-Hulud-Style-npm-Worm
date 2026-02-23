@@ -1,0 +1,174 @@
+{
+  "incident_metadata": {
+    "name": "SANDWORM_MODE - NPM Supply Chain Worm Campaign",
+    "date": "2026-02-22",
+    "last_update": "2026-02-22",
+    "campaign_type": "Typosquatting-driven npm supply chain worm",
+    "attack_vector": "Supply chain compromise targeting developer and CI environments",
+    "impact": "Credential harvesting, repository poisoning, CI workflow injection",
+    "severity": "CRITICAL",
+    "total_packages_confirmed": 19,
+    "total_packages_potentially_compromised": 0,
+    "total_packages": 19,
+    "attack_vectors": [
+      "Typosquatting",
+      "Credential harvesting",
+      "CI workflow injection",
+      "MCP server poisoning"
+    ],
+    "exfiltration_methods": [
+      "HTTPS POST",
+      "DNS tunneling"
+    ],
+    "persistence_mechanisms": [
+      "Git hook templates",
+      "CI workflow injection"
+    ],
+    "note": "SANDWORM_MODE campaign targeting npm ecosystem with MCP injection and multi-channel exfiltration.",
+    "version": "1.0.0"
+  },
+  "compromised_packages": {
+    "claud-code": {
+      "compromised_versions": [
+        "0.2.1"
+      ],
+      "safe_version": null
+    },
+    "cloude-code": {
+      "compromised_versions": [
+        "0.2.1"
+      ],
+      "safe_version": null
+    },
+    "cloude": {
+      "compromised_versions": [
+        "0.3.0"
+      ],
+      "safe_version": null
+    },
+    "crypto-locale": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "crypto-reader-info": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "detect-cache": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "format-defaults": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "hardhta": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "locale-loader-pro": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "naniod": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "node-native-bridge": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "opencraw": {
+      "compromised_versions": [
+        "2026.2.17"
+      ],
+      "safe_version": null
+    },
+    "parse-compat": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "rimarf": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "scan-store": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "secp256": {
+      "compromised_versions": [
+        "1.0.0"
+      ],
+      "safe_version": null
+    },
+    "suport-color": {
+      "compromised_versions": [
+        "1.0.1"
+      ],
+      "safe_version": null
+    },
+    "veim": {
+      "compromised_versions": [
+        "2.46.2"
+      ],
+      "safe_version": null
+    },
+    "yarsg": {
+      "compromised_versions": [
+        "18.0.1"
+      ],
+      "safe_version": null
+    }
+  },
+  "potentially_compromised_packages": [],
+  "malicious_indicators": {
+    "domains": [
+      "pkg-metrics.official334.workers.dev",
+      "freefan.net",
+      "fanfree.net"
+    ],
+    "endpoints": [
+      "/exfil",
+      "/drain"
+    ],
+    "host_artifacts": [
+      ".cache/manifest.cjs",
+      "/dev/shm/.node_<hex>.js"
+    ],
+    "persistence_indicators": [
+      "git config --global init.templateDir",
+      "~/.git-templates/hooks/"
+    ]
+  },
+  "crypto_indicators": [
+    "AES-256-GCM",
+    "stage2_sha256:5440e1a424631192dff1162eebc8af5dc2389e3d3b23bd26e9c012279ae116e4"
+  ],
+  "suspicious_patterns": [],
+  "remediation": {
+    "safe_overrides": {}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sample_repo_clean",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sample project with only clean packages",
+  "dependencies": {
+    "axios": "1.6.7",
+    "lodash": "4.17.21",
+    "chalk": "5.3.0"
+  }
+}

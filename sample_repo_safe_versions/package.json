@@ -1,0 +1,13 @@
+{
+  "name": "sample_repo_safe_versions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sample project with monitored packages on non-compromised versions",
+  "dependencies": {
+    "claud-code": "0.2.0",
+    "cloude-code": "0.2.0",
+    "cloude": "0.2.9",
+    "detect-cache": "0.9.9",
+    "axios": "1.6.7"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "sample_repo_mixed",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sample project with mixed clean and compromised packages",
+  "dependencies": {
+    "claud-code": "0.2.1",
+    "cloude-code": "0.2.0",
+    "cloude": "0.3.0",
+    "detect-cache": "1.0.0",
+    "veim": "2.46.2",
+    "yarsg": "18.0.1",
+    "axios": "1.6.7",
+    "lodash": "4.17.21"
+  }
+}

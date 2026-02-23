@@ -1,0 +1,43 @@
+================================================================================
+ENHANCED NPM PACKAGE COMPROMISE DETECTION REPORT WITH PHOENIX INTEGRATION
+================================================================================
+Scan completed: 2026-02-23 05:42:45
+
+SCAN STATISTICS:
+--------------------
+Files scanned: 0
+Total packages scanned: 0
+Clean packages found: 0
+Total findings: 0
+Scan mode: Light scan (NPM files only)
+Repository storage: github-pull/20260223
+Results directory: result/20260223
+
+GITHUB ACCESS SUMMARY:
+----------------------
+API failures: 1 repositories
+Complete failures: 1 repositories
+
+REPOSITORY PROCESSING DETAILS:
+------------------------------
+REPOSITORIES WITH API FAILURES:
+ 1. SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm
+    URL: https://github.com/Security-Phoenix-demo/SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm
+    Reason: github_api_failed
+    Status: ❌ Failed both API and fallback
+
+REPOSITORIES COMPLETELY INACCESSIBLE:
+ 1. SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm
+    URL: https://github.com/Security-Phoenix-demo/SANDWORM_MODE-Sha1-Hulud-Style-npm-Worm
+    Reason: all_methods_failed
+    Status: ❌ All access methods failed
+
+
+SEVERITY SUMMARY:
+--------------------
+
+✅ No compromised packages detected!
+
+SCAN MODE:
+---------------
+Light scan mode: NPM files only (via GitHub API)
