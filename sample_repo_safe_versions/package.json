@@ -8,6 +8,6 @@
     "cloude-code": "0.2.0",
     "cloude": "0.2.9",
     "detect-cache": "0.9.9",
-    "axios": "1.6.7"
+    "axios": "1.13.5"
   }
 }
