@@ -461,44 +461,26 @@ additional_asset_tags = npm-project,dependency-scan
             description = f"{repo_info}File: {file_info} - {risk_indicator} Library {package_name} version {version} is not affected by SANDWORM_MODE"
         else:
             if severity == 'CRITICAL':
-                description = f"{repo_info}File: {file_info} - {risk_indicator} CONFIRMED COMPROMISED package detected: {package_name}@{version}"
-                if is_duplicate and duplicate_count > 1:
-                    description += f" (DUPLICATE: found {duplicate_count} times - increased severity)"
+                description = f"{repo_info}File: {file_info} - {risk_indicator} FIX IMMEDIATELY remove or update {package_name} to a safe version."
                 if compromised_versions:
-                    description += f" (known compromised versions: {', '.join(compromised_versions)})"
-            elif severity == 'HIGH':
-                description = f"{repo_info}File: {file_info} - {risk_indicator} POTENTIALLY COMPROMISED package detected: {package_name}@{version}"
-                description += " (ALL VERSIONS potentially compromised - no version info available)"
+                    description += f" Avoid compromised versions: {', '.join(compromised_versions)}."
                 if is_duplicate and duplicate_count > 1:
-                    description += f" (DUPLICATE: found {duplicate_count} times - increased severity)"
+                    description += f" Duplicate detected: found {duplicate_count} times."
+            elif severity == 'HIGH':
+                description = f"{repo_info}File: {file_info} - {risk_indicator} Potentially compromised package detected: {package_name}@{version}"
+                description += " All versions may be compromised; review required."
+                if is_duplicate and duplicate_count > 1:
+                    description += f" Duplicate detected: found {duplicate_count} times."
             else:
                 description = f"{repo_info}File: {file_info} - {risk_indicator} Suspicious package detected: {package_name}@{version}"
 
-        # Create remedy recommendation with risk assessment
-        if is_safe:
-            remedy = f"Package {package_name}@{version} is using a safe version (Risk: {risk_score}/1000). Continue monitoring for updates."
-        elif severity == 'CLEAN':
-            remedy = f"Package {package_name}@{version} is clean and not affected by SANDWORM_MODE compromise (Risk: {risk_score}/1000). No action required, continue monitoring for future security advisories."
+        # Create remedy recommendation with fixed version only
+        if is_safe or severity == 'CLEAN':
+            fixed_version = version
         else:
-            if severity == 'CRITICAL':
-                if compromised_versions:
-                    if self.safe_overrides.get(package_name):
-                        remedy = f"🚨 CRITICAL (Risk: {risk_score}/1000): IMMEDIATELY update {package_name} to safe version {self.safe_overrides[package_name]} or latest stable version. "
-                    else:
-                        remedy = f"🚨 CRITICAL (Risk: {risk_score}/1000): IMMEDIATELY remove or update {package_name} to a safe version. "
-                    remedy += f"Avoid compromised versions: {', '.join(compromised_versions)}. "
-                    if is_duplicate and duplicate_count > 1:
-                        remedy += f"URGENT: This package appears {duplicate_count} times in your dependencies - review all instances."
-                else:
-                    remedy = f"🚨 CRITICAL (Risk: {risk_score}/1000): Review package {package_name} immediately for security issues."
-            elif severity == 'HIGH':
-                remedy = f"⚠️ HIGH RISK (Risk: {risk_score}/1000): Package {package_name} is potentially compromised with NO VERSION INFORMATION available. "
-                remedy += "Assume ALL versions are compromised. Consider removing this package or finding a verified alternative. "
-                remedy += "Conduct thorough code review before continuing use. "
-                if is_duplicate and duplicate_count > 1:
-                    remedy += f"WARNING: This package appears {duplicate_count} times in your dependencies - review all instances."
-            else:
-                remedy = f"REVIEW REQUIRED (Risk: {risk_score}/1000): Investigate package {package_name} for potential security issues and consider alternatives."
+            fixed_version = self.safe_overrides.get(package_name) or "unknown"
+
+        remedy = f"Fixed in version {fixed_version}"
 
         finding = {
             "name": f"NPM Package Security: {package_name} [Risk: {risk_score}/1000, Phoenix: {phoenix_severity:.1f}/10]",
